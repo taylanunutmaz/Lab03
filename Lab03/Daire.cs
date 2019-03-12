@@ -10,20 +10,25 @@ namespace Lab03
         /* 
          * Bu şekle özel başka özellikler varsa onlarıda implemente ediniz.
          */
-        public Daire(int x, int y) : base(x, y)
+        private double yaricap;
+            
+        public Daire(int x, int y, double y_cap) : base(x, y)
         {
             //Eğer eklediğiniz ek özellikleri yaratıcı metota başlatmak isterseniz yaratıcı metotu günceleyebilirsiniz.
+            base.X = x;
+            base.Y = y;
+            yaricap = y_cap;
         }
         /*
          * Abstarct metotlar burada implemente edilmeli.
          */
         public override double AlanHesapla()
         {
-            return 0.0;
+            return (Math.PI * yaricap * yaricap);
         }
         public override double CevreHesapla()
         {
-            return 0.0;
+            return (2 * Math.PI * yaricap);
         }
 
     }

@@ -10,21 +10,27 @@ namespace Lab03
         /* 
          * Bu şekle özel başka özellikler varsa onlarıda implemente ediniz.
          */
-        public Dikdortgen(int x, int y) : base(x, y)
+        private double yukseklik;
+        private double genislik;
+        public Dikdortgen(int x, int y, double yuk, double gen) : base(x, y)
         {
             //Eğer eklediğiniz ek özellikleri yaratıcı metota başlatmak isterseniz yaratıcı metotu günceleyebilirsiniz.
+            base.X = x;
+            base.Y = y;
+            yukseklik = yuk;
+            genislik = gen;
         }
         /*
          * Abstarct metotlar burada implemente edilmeli.
          */
         public override double AlanHesapla()
         {
-            return 0.0;
+            return (yukseklik*genislik);
         }
 
         public override double CevreHesapla()
         {
-            return 0.0;
+            return ((2 * yukseklik) + (2 * genislik));
         }
     }
 }
